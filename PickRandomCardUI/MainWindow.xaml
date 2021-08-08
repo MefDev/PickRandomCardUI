@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PickRandomCardUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Card Picker" Height="300" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -15,20 +15,18 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Label x:Name="label" HorizontalAlignment="Left" Margin="87,64,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label1" Content="How Many Cards Should I Pick?" HorizontalAlignment="Center" VerticalAlignment="Center" Width="182" Margin="42,24,35.2,96" Height="40"/>
-        <Slider x:Name="slider" HorizontalAlignment="Left" Margin="44,57,0,0" VerticalAlignment="Top" Height="34" Width="180" RenderTransformOrigin="0.5,0.5">
-            <Slider.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.169"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Slider.RenderTransform>
-        </Slider>
-        <ListBox x:Name="listBox" Grid.Column="1" HorizontalAlignment="Left" Height="287" Margin="37.8,24,0,0" VerticalAlignment="Top" Width="192" Grid.RowSpan="2"/>
-        <Button x:Name="button" Content="Pick Some Cards" HorizontalAlignment="Left" Margin="55,105,0,0" Grid.Row="1" VerticalAlignment="Top" Width="169" Height="28"/>
+       
+
+
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20" >
+            <Label Content="How many cards should I pick?" FontSize="20" />
+            <Slider x:Name="numberOfCards" Minimum="1" Maximum="15" Foreground="Black" IsSnapToTickEnabled="True" TickPlacement="BottomRight" />
+        </StackPanel>
+
+        <ListBox x:Name="listOfCards" Grid.Column="1"  Grid.RowSpan="2" FontSize="20" Margin="20"/>
+        <Button x:Name="button" Content="Pick Some Cards" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" FontSize="20" Click="button_Click"/>
+         
 
     </Grid>
 </Window>

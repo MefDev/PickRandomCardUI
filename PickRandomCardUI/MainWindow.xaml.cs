@@ -24,5 +24,14 @@ namespace PickRandomCardUI
         {
             InitializeComponent();
         }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            string[] pickedCards = CardPicker.pickSomeCards((int) numberOfCards.Value);
+            foreach (string card in pickedCards)
+            {
+                listOfCards.Items.Add(card);
+            }
+        }
     }
 }
